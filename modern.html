@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SwipeVid - Modern Google Identity</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="auth-container" id="auth-container">
+            <h1>SwipeVid</h1>
+            <p>Modern Google Identity Services</p>
+            <button id="authorize-button" class="auth-button" disabled>Loading...</button>
+            <div style="margin-top: 20px; font-size: 12px; opacity: 0.7;">
+                <p>📱 Mobile-optimized TikTok-style video experience</p>
+                <p>🎬 Access videos from your Google Drive</p>
+                <p>🔧 Using modern Google Identity Services</p>
+            </div>
+        </div>
+        
+        <div class="video-container" id="video-container" style="display: none;">
+            <div class="video-wrapper" id="video-wrapper">
+                <!-- Videos will be dynamically inserted here -->
+            </div>
+            <div class="video-controls">
+                <button id="prev-button" class="control-button">⬆️</button>
+                <button id="next-button" class="control-button">⬇️</button>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading videos from Google Drive...</p>
+        </div>
+    </div>
+
+    <!-- Modern Google API Scripts -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
+    
+    <!-- Modern App Script -->
+    <script src="script-modern.js"></script>
+</body>
+</html>
