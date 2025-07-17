@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwipeVid - API Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="auth-container" id="auth-container">
+            <h1>SwipeVid API Test</h1>
+            <p>Testing Google API connection...</p>
+            <div id="debug-info" style="font-size: 12px; margin: 20px 0; text-align: left; max-width: 400px; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                <p><strong>🔍 Debug Information:</strong></p>
+                <div id="api-status">Checking...</div>
+            </div>
+            <button id="authorize-button" class="auth-button" disabled>Loading...</button>
+        </div>
+    </div>
+
+    <script>
+        function updateStatus(message) {
+            const statusDiv = document.getElementById('api-status');
+            if (statusDiv) {
+                statusDiv.innerHTML += message + '<br>';
+            }
+            console.log(message);
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            updateStatus(`📍 URL: ${window.location.href}`);
+            updateStatus(`🔒 Protocol: ${window.location.protocol}`);
+            updateStatus(`🌐 Host: ${window.location.host}`);
+        });
+    </script>
+    
+    <script src="https://apis.google.com/js/api.js" 
+            onload="updateStatus('✅ Google API script loaded');"
+            onerror="updateStatus('❌ Failed to load Google API script')"></script>
+    
+    <script src="https://accounts.google.com/gsi/client" 
+            onload="updateStatus('✅ Google Sign-In script loaded');"
+            onerror="updateStatus('❌ Failed to load Google Sign-In script')"></script>
+    
+    <script src="script-simple.js"></script>
+</body>
+</html>
