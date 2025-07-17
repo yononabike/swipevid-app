@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SwipeVid Demo - TikTok-style Video Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="auth-container" id="auth-container">
+            <h1>SwipeVid Demo</h1>
+            <p>Experience TikTok-style video swiping</p>
+            <button id="authorize-button" class="auth-button">Start Demo</button>
+        </div>
+        
+        <div class="video-container" id="video-container" style="display: none;">
+            <div class="video-wrapper" id="video-wrapper">
+                <!-- Videos will be dynamically inserted here -->
+            </div>
+            <div class="video-controls">
+                <button id="prev-button" class="control-button">⬆️</button>
+                <button id="next-button" class="control-button">⬇️</button>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading videos...</p>
+        </div>
+    </div>
+
+    <!-- Demo Script (no Google API required) -->
+    <script src="demo-script.js"></script>
+</body>
+</html>
